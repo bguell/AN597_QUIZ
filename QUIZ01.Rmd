@@ -1,0 +1,34 @@
+---
+title: 'Quiz #1'
+author: "Brandon Güell"
+date: "9/26/2017"
+output: html_document
+---
+
+import hte zombies file
+```{r}
+library(curl)
+f <- f <- curl("https://raw.githubusercontent.com/fuzzyatelin/fuzzyatelin.github.io/master/AN597_Fall17/zombies.csv")
+d <- read.csv(f, header = TRUE, sep = ",", stringsAsFactors = FALSE)
+head(d)
+
+```
+okay so its now a dataframe called d
+
+now i need to wrangle some data!
+lets use dpylr!
+```{r}
+library(dplyr)
+summary(d)
+df=tbl_df(d)
+df
+#only get first and last names of females survivors using piping
+
+surf <- df %>% #name it somethign new
+  select(first_name, last_name, gender) %>% #select only the colums of names and gender
+  filter(gender=="Female") %>% #select rows only where gender==female
+  select(first_name, last_name) #then only get teh columns of names... propbably could have done filter FIRST and then this.. but this works i think...
+surf
+
+```
+
