@@ -32,3 +32,9 @@ surf
 
 ```
 
+```{r}
+wave <- df %>%
+  group_by(weight, height) %>%
+  mutate(summarise(mean(weight))
+```
+
