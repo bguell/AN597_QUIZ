@@ -31,10 +31,11 @@ surf <- df %>% #name it somethign new
 surf
 
 ```
-
+extra credit attempt....
 ```{r}
 wave <- df %>%
   group_by(weight, height) %>%
-  mutate(summarise(mean(weight))
+  mutate(mean_weight=(mean(weight), mean_height=mean(height)))
+         wave
 ```
 
