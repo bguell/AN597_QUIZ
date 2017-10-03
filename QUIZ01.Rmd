@@ -70,6 +70,6 @@ library(tidyr)
 #couldn't figure out how to get the two categories....
 
 library(ggplot2)
-ggplot(surf, aes(x=height, y=zombies_killed)) +geom_boxplot(aes(color=tall))
+ggplot(surf, aes(x=height, y=zombies_killed)) +geom_boxplot(aes(color=tall)) #sorta worked.... lol 
 ```
 
