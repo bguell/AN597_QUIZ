@@ -33,15 +33,7 @@ surf
 ```
 extra credit attempt....
 ```{r}
-wave <- df %>%
-  group_by(weight, height) %>%
-  mutate(mean_weight=(mean(weight), mean_height=mean(height)))
-         wave
 ```
-
-
-
-
 
 
 #Quiz #2
@@ -72,8 +64,7 @@ surf
 okay so now graph difference betwee zombies killed by height, between geight categories
 
 ```{r}
-
-surf=mutate(surf, categoriestall= height>=65 ,short= height<65)
+surf=mutate(surf, tall= height>=65 ,short= height<65)
 surf
 library(tidyr)
 #couldn't figure out how to get the two categories....
