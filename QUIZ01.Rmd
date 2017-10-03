@@ -73,7 +73,7 @@ okay so now graph difference betwee zombies killed by height, between geight cat
 
 ```{r}
 
-surf=mutate(surf, categories=c(surf$height>=65,surf$height<65))
+surf=mutate(surf, categories=c(height>=65,height<65))
 surf
 #couldn't figure out how to get the two categories....
 
