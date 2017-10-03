@@ -39,3 +39,45 @@ wave <- df %>%
          wave
 ```
 
+
+
+
+
+
+#Quiz #2
+```{r}
+library(curl)
+f <- f <- curl("https://raw.githubusercontent.com/fuzzyatelin/fuzzyatelin.github.io/master/AN597_Fall17/zombies.csv")
+d <- read.csv(f, header = TRUE, sep = ",", stringsAsFactors = FALSE)
+head(d)
+
+```
+ets use dpylr!
+```{r}
+library(dplyr)
+summary(d)
+df=tbl_df(d)
+df
+#only get first and last names of females survivors using piping
+
+surf <- df %>% #name it somethign new
+  select(first_name, last_name, height, weight, zombies_killed, gender) %>% #select only the colums of names and gender
+  filter(gender=="Female") %>% #select rows only where gender==female
+  select(first_name, last_name, height, weight, zombies_killed) #then only get teh columns of names... propbably could have done filter FIRST and then this.. but this works i think...
+
+surf
+```
+
+
+okay so now graph difference betwee zombies killed by height, between geight categories
+
+```{r}
+
+surf=mutate(surf, categories=c(surf$height>=65,surf$height<65))
+surf
+
+
+library(ggplot2)
+ggplot(surf, aes(x=height, y=zombies_killed)) +geom_boxplot(aes(group=c(surf$height[surf$height>=65], surf$height[surf$height<65])))
+```
+
