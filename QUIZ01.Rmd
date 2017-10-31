@@ -95,12 +95,37 @@ surf <- d %>% #name it somethign new
   filter(major=="medicine/nursing") #select rows only where major are nursing/medicine
 surf
 
+library(ggplot2)
+#years of education as response variable..
+
 m=lm(data = surf, age ~ years_of_education)
 m
 summary(m)
 
-library(ggplot2)
+#two regresion lines by gender with 95% CI
 g= ggplot(data=surf, aes(x=age, y=years_of_education, color= gender)) + geom_point() + geom_smooth(method="lm", formula = y ~ x)
 g
+
+#one regression line with 95% CI
+g= ggplot(data=surf, aes(x=age, y=years_of_education)) + geom_point(aes(color=gender)) + geom_smooth(method="lm", formula = y ~ x)
+g
+
+
+#***************
+#age as resonse variable:
+
+m=lm(data = surf, years_of_education~ age)
+m
+summary(m)
+
+#two regression lines by gender with 95% CI
+g= ggplot(data=surf, aes(y=age, x=years_of_education, color= gender)) + geom_point() + geom_smooth(method="lm", formula = y ~ x)
+g
+
+#one regression line with 95% CI
+g= ggplot(data=surf, aes(y=age, x=years_of_education)) + geom_point(aes(color=gender)) + geom_smooth(method="lm", formula = y ~ x)
+g
+
+
 ```
 
