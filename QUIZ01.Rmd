@@ -76,9 +76,10 @@ ggplot(surf, aes(x=height, y=zombies_killed)) +geom_boxplot(aes(color=tall)) #so
 
 
 
-#quiz 3? idk halloween
+#quiz 3? idk halloween yay boo!
 
-med nursing
+from zombies...
+med/nursing only
 age and YEO as YEO as cont variable
 scatterplot regression line with 95% CI
 color points so males are pink and females are blue
